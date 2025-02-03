@@ -1,7 +1,7 @@
 <?php
    /*
-   ** String will contain a pattern and a string seperated by a space. The
-   ** function is to validate wether or not the string matches the pattern.
+   ** String will contain a pattern and a string separated by a space. The
+   ** function is to validate whether or not the string matches the pattern.
    ** The pattern follows the following rules a '+' indicates a lowercase
    ** alphabetic character from a-z. A '$' indicates a digit from 1 to 9. a '*'
    ** indicates any character, if it is followed by a number in brackets ie {6}
@@ -12,7 +12,7 @@
    ** Jim Barry - 20250122
    */
    function StringPatternMatch($str) {
-      // Sepreate the two parts of the provided string into pattern and example
+      // Separate the two parts of the provided string into pattern and example
       $parts = explode(" ", $str, 2) ;
       // Set the return value to 'true'. If anything violates the pattern, it
       // will be switched to 'false'.
@@ -38,7 +38,7 @@
 
       // Placeholder for the regex we will construct.
       $RegexPattern = "" ;
-      // Place holder for the number part of the '*' pasttern
+      // Place holder for the number part of the '*' pattern
       $cntstr = "" ;
       // The actual integer either defaulted to 3 or derived from $cntstr
       $cnt = 3 ;
@@ -57,7 +57,7 @@
             $ePos++ ;
          }
          elseif ($pattern[$pPos] == "*") {
-            // if it's a '*', record the character and then determin the number
+            // if it's a '*', record the character and then determine the number
             // of appearances it should make
             $cntstr = "" ;
             $cnt = 3 ;
@@ -104,7 +104,7 @@
       // echo $parts[1] . "\n" ;
       
       if(!preg_match("/" . $RegexPattern . "/",$parts[1])) {
-         //If the reult does not match the string, return false
+         //If the result does not match the string, return false
          $result = false ;
       }
       else {
@@ -122,12 +122,12 @@
          return "true" ;
       }
 
-      // If somehow we've arrived here and result is unset, just return false
+      // If somehow we've arrived here and the result is unset, just return false
       return "false" ;
    }
 
    /*
-   ** Checks if a value is within a range. Works for numberic or character
+   ** Checks if a value is within a range. Works for numeric or character
    ** types and returns a boolean
    **
    ** Jim Barry - 20250122
